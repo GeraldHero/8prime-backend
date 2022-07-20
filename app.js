@@ -4,6 +4,8 @@ import { errorHandler, notFound } from './middleware/errorMiddleware';
 import dotenv from 'dotenv';
 import Users from './routes/userRoutes.js';
 import Auth from './routes/authRoutes.js';
+import Subscibers from './routes/subscriberRoutes.js';
+import Images from './routes/imageRoutes.js';
 
 dotenv.config();
 
@@ -26,7 +28,8 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use('/api/users', Users);
 app.use('/api/auth', Auth);
-
+app.use('/api/subscribers', Subscibers);
+app.use('/api/images', Images);
 app.use(notFound);
 app.use(errorHandler);
 

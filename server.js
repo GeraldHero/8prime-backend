@@ -8,6 +8,8 @@ import colors from 'colors';
 import connectDB from './db/database.js';
 import Users from './routes/userRoutes.js';
 import Auth from './routes/authRoutes.js';
+import Subscribers from './routes/subscriberRoutes.js';
+import Images from './routes/imageRoutes.js';
 dotenv.config();
 const app = express();
 const { PORT } = process.env;
@@ -23,6 +25,9 @@ app.use(morgan('dev'));
 // Routes
 app.use('/api/users', Users);
 app.use('/api/auth', Auth);
+app.use('/api/subscriber', Subscribers);
+app.use('/api/images', Images);
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));

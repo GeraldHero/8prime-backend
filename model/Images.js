@@ -3,9 +3,16 @@ const { Schema } = mongoose;
 
 const ImagesSchema = Schema(
   {
-    section: { type: Buffer },
-    image: { type: Buffer },
-    title: { type: String },
+    section: {
+      type: String,
+      require: true,
+    },
+    photos: [
+      {
+        path: String,
+        filename: String,
+      },
+    ],
   },
   {
     timestamps: true,

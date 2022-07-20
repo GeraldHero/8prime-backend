@@ -13,13 +13,21 @@ const SubscibersSchema = Schema(
         if (!validator.isEmail(value)) throw new Error('Invalid Email');
       },
     },
-    message: {
-      type: String,
+    messages: {
+      type: Array,
       require: true,
     },
     name: {
       type: String,
       require: true,
+    },
+    phone: {
+      type: String,
+      require: true,
+    },
+    hasRead: {
+      type: Boolean,
+      default: false,
     },
   },
   {

@@ -13,7 +13,7 @@ export const getAllUsers = async (req, res) => {
 };
 
 // @route   GET api/users
-// @desc    Get All Users Data
+// @desc    Get Specific User Data
 // @access  Private
 export const getUser = async (req, res) => {
   try {

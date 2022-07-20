@@ -32,6 +32,7 @@ export const loginUser = async (req, res) => {
 
 export const logoutUser = async (req, res) => {
   try {
+    req.user.logoutTime = await Date();
     req.user.tokens = req.user.tokens.filter(
       (token) => token.token !== req.token
     );
@@ -50,6 +51,7 @@ export const logoutUser = async (req, res) => {
 export const logoutAllUser = async (req, res) => {
   try {
     req.user.tokens = [];
+    req.user.logoutTime = await Date();
     await req.user.save();
     return res.status(200).send({ msg: 'All device are succesfully logout!' });
   } catch (error) {

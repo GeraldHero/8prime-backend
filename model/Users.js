@@ -73,6 +73,7 @@ UsersSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY);
   const usedPlatform = platform.description;
+  user.loginTime = Date();
   //Concat token and usedplatform to user.tokens
   user.tokens = [...user.tokens, { token, usedPlatform }];
   await user.save();
