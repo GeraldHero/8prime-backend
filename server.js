@@ -10,6 +10,7 @@ import Users from './routes/userRoutes.js';
 import Auth from './routes/authRoutes.js';
 import Subscribers from './routes/subscriberRoutes.js';
 import Images from './routes/imageRoutes.js';
+import Projects from './routes/projectRoutes.js';
 dotenv.config();
 const app = express();
 const { PORT } = process.env;
@@ -27,6 +28,7 @@ app.use('/api/users', Users);
 app.use('/api/auth', Auth);
 app.use('/api/subscriber', Subscribers);
 app.use('/api/images', Images);
+app.use('/api/projects', Projects);
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

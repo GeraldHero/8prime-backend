@@ -1,6 +1,6 @@
 import express from 'express';
 import auth from '../middleware/auth.js';
-import multerMiddleware from '../middleware/multerUpload.js';
+import multerMiddleware from '../middleware/multerUploadMulti.js';
 
 import {
   getAllImage,

@@ -37,6 +37,18 @@ export const imageDummy1 = {
   },
 };
 
+const dummyPro1Id = new mongoose.Types.ObjectId();
+export const dummyProject1 = {
+  _id: dummyPro1Id,
+  title: 'Bungalow',
+  description: 'Here at Angeles City Pampanga',
+  listTitle: 'Order and Facility',
+  bedrooms: 3,
+  cr: 2,
+  area: ['Living room', 'Kitchen', 'Cover Court'],
+  price: 2000000,
+};
+
 export const setupDb = async () => {
   await Users.deleteMany();
   await Subscribers.deleteMany();

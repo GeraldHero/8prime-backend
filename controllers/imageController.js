@@ -109,12 +109,7 @@ export const deleteAllImage = async (req, res) => {
   }
 };
 
-// const { buffer, fieldname, originalname } = req.file;
-// const sharpBuffer = await sharp(buffer)
-//   .webp({ lossless: true, quality: 60 })
-//   .toFormat('png')
-//   .toBuffer();
-// .resize(100)
+
 
 // delete in buffer
 // image.photos = await image.photos.filter(

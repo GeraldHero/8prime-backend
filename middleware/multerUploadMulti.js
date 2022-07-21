@@ -4,6 +4,7 @@ import multer from 'multer';
 // diskStorage do not use when using buffer data because it removes buffer and replace it a destination file or path.
 // use ./ for storing on root
 // http://expressjs.com/en/resources/middleware/multer.html
+
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     cb(null, `./images/uploads/`);

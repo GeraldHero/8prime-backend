@@ -3,14 +3,14 @@ const { Schema } = mongoose;
 
 const ProjectSchema = Schema(
   {
-    image: { type: Buffer },
+    image: { type: Buffer, filename: String },
     title: { type: String },
     description: { type: String },
     listTitle: { type: String },
     bedrooms: { type: Number },
     cr: { type: Number },
     sq: { type: Number },
-    area: { type: String },
+    area: { type: Array },
     price: { type: Number },
   },
   {
