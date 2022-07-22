@@ -3,9 +3,7 @@ import Images from '../model/Images.js';
 import fs from 'fs';
 
 const deleteFile = (path) => {
-  fs.unlink(path, function () {
-    console.log('File deleted!');
-  });
+  fs.unlink(path, function () {});
 };
 
 // @route   Get api/images
@@ -108,8 +106,6 @@ export const deleteAllImage = async (req, res) => {
     return res.status(400).send({ msg: 'Something went wrong :(' });
   }
 };
-
-
 
 // delete in buffer
 // image.photos = await image.photos.filter(

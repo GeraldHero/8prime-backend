@@ -84,7 +84,7 @@ export const deleteProject = async (req, res) => {
 
     // find by _id and params _id
     await Projects.findByIdAndDelete({ _id });
-    return res.status(200).send({ msg: 'Successfully Deleted!' });
+    return res.status(200).send({ msg: 'Deleted Successfully!' });
   } catch (error) {
     return res.status(500).send({ msg: 'Something went wrong :(' });
   }
@@ -96,7 +96,6 @@ export const deleteProject = async (req, res) => {
 
 export const editProject = async (req, res) => {
   // Check key name if valid
-  console.log(req.body);
   const updates = Object.keys(req.body);
   const allowedUpdates = [
     'title',
@@ -132,11 +131,14 @@ export const editProject = async (req, res) => {
       project.image = sharpBuffer;
     }
 
+    if (req.body.area) req.body.area = req.body.area.split(', ');
+
     await updates.forEach((update) => {
       project[update] = req.body[update];
     });
 
     await project.save();
+
     return res.status(200).json(project);
   } catch (error) {
     console.log(error);
