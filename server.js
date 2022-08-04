@@ -26,7 +26,7 @@ app.use(morgan('dev'));
 // Routes
 app.use('/api/users', Users);
 app.use('/api/auth', Auth);
-app.use('/api/subscriber', Subscribers);
+app.use('/api/subscribers', Subscribers);
 app.use('/api/images', Images);
 app.use('/api/projects', Projects);
 
