@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../app.js';
+import app from '../testServer.js';
 import { dummyTest1, setupDb } from './fixtures/db.js';
 
 beforeEach(async () => {

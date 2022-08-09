@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../app.js';
+import app from '../testServer.js';
 import Projects from '../model/Projects.js';
 import { dummyProject1, dummyTest1, setupDb } from './fixtures/db.js';
 

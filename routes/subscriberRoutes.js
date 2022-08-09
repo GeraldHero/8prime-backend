@@ -8,5 +8,6 @@ import {
 const router = express.Router();
 
 router.route('/').get(auth, getAllSubscribers).post(createMessage);
+
 router.route('/:id').get(auth, getSubscriber);
 export default router;

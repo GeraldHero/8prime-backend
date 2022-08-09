@@ -7,6 +7,8 @@ import Auth from './routes/authRoutes.js';
 import Subscibers from './routes/subscriberRoutes.js';
 import Images from './routes/imageRoutes.js';
 import Project from './routes/projectRoutes.js';
+import Fake from './routes/fakeRoutes.js';
+
 dotenv.config();
 
 const connectDB = async () => {
@@ -31,6 +33,7 @@ app.use('/api/auth', Auth);
 app.use('/api/subscribers', Subscibers);
 app.use('/api/images', Images);
 app.use('/api/projects', Project);
+app.use('/api/fake', Fake);
 app.use(notFound);
 app.use(errorHandler);
 

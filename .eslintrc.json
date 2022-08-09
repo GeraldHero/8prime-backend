@@ -1,0 +1,6 @@
+// https://stackoverflow.com/questions/69554485/eslint-error-must-use-import-to-load-es-module
+{
+  "parser": "@babel/eslint-parser",
+  "extends": "airbnb",
+  "plugins": ["react"]
+}
