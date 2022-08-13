@@ -49,23 +49,37 @@ export const getSubscriber = async (req, res) => {
 export const getAllSubscribers = async (req, res) => {
   const page = req.query.page;
   const limit = req.query.limit;
-  const startIndex = (page - 1) * limit;
+  const startIndex = page * limit;
 
   try {
-    const total = await Subscribers.countDocuments({});
+    const totalPage = await Subscribers.countDocuments({});
     const subscriberData = await Subscribers.find()
       .limit(limit)
       .skip(startIndex)
       .sort({
         name: 'asc',
       });
+    // to set page - Math.ceil(total / limit)
+    return res.status(200).json({
+      subscriberList: subscriberData,
+      totalPage,
+    });
+  } catch (error) {
+    return res.status(500).send({ msg: 'Something went wrong :(' });
+  }
+};
 
-    return res
-      .status(200)
-      .json({
-        subscriberList: subscriberData,
-        totalPage: Math.ceil(total / limit),
-      });
+// @route   DELETE api/subscribers/:id
+// @desc    Delete Specific Subscriber Data
+// @access  Private
+
+export const deleteSubscriber = async (req, res) => {
+  try {
+    const subscriber = await Subscribers.findByIdAndRemove({
+      _id: req.params.id,
+    });
+
+    return res.status(200).send(subscriber);
   } catch (error) {
     return res.status(500).send({ msg: 'Something went wrong :(' });
   }
