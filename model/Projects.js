@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const ProjectSchema = Schema(
@@ -18,5 +18,5 @@ const ProjectSchema = Schema(
   }
 );
 
-const Projects = mongoose.model('project', ProjectSchema);
+const Projects = mongoose.model("project", ProjectSchema);
 export default Projects;
